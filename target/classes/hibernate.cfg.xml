@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">1234</property>
+
+        <!-- JDBC connection pool settings -->
+        <property name="connection.pool_size">5</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Entity mappings -->
+        <mapping class="com.university.model.UniversityEmployee"/>
+        <mapping class="com.university.model.Department"/>
+        <mapping class="com.university.model.Discipline"/>
+        <mapping class="com.university.model.Exam"/>
+        <mapping class="com.university.model.Faculty"/>
+        <mapping class="com.university.model.Group"/>
+        <mapping class="com.university.model.Institute"/>
+        <mapping class="com.university.model.MakingAGrade"/>
+        <mapping class="com.university.model.MakingAGradeId"/>
+        <mapping class="com.university.model.Profile"/>
+        <mapping class="com.university.model.Specialty"/>
+        <mapping class="com.university.model.Student"/>
+        <mapping class="com.university.model.Deanery"/>
+    </session-factory>
+</hibernate-configuration>

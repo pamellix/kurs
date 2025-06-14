@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.university.dashboard.teacher.TeacherDashboardController"
+      spacing="10"
+      style="-fx-padding: 20;">
+
+    <Text text="Панель преподавателя"
+          style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+
+    <Label fx:id="welcomeLabel" style="-fx-font-size: 16;"/>
+
+    <TableView fx:id="examsTable" style="-fx-pref-height: 300;">
+        <columns>
+            <TableColumn text="Дата экзамена" prefWidth="150">
+                <cellValueFactory><PropertyValueFactory property="examDate"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Тип экзамена" prefWidth="150">
+                <cellValueFactory><PropertyValueFactory property="examType"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Группа" prefWidth="100">
+                <cellValueFactory><PropertyValueFactory property="groupName"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Дисциплина" prefWidth="200">
+                <cellValueFactory><PropertyValueFactory property="disciplineName"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10">
+        <Button text="Провести экзамен"
+                onAction="#conductExam"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        <Button text="Назад"
+                onAction="#goBack"
+                style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+    </HBox>
+</VBox>
